@@ -15,7 +15,6 @@ Source:		http://www.cpan.org/modules/by-module/Scuba/%{module}-%{version}.tar.bz
 BuildRequires:	perl-devel
 %endif
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides the ability to perform useful calculations using

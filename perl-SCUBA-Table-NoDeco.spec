@@ -1,7 +1,7 @@
 %define module	SCUBA-Table-NoDeco
 %define name	perl-%{module}
 %define version	0.03
-%define release	%mkrel 4
+%define release	%mkrel 6
 
 Name:		%{name}
 Version:	%{version}

@@ -1,21 +1,21 @@
-%define module	SCUBA-Table-NoDeco
-%define name	perl-%{module}
-%define version	0.03
-%define release	%mkrel 7
+%define upstream_name	 SCUBA-Table-NoDeco
+%define upstream_version 0.03
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Calculate no-decompression dive times
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/Scuba/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Scuba/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides the ability to perform useful calculations using
@@ -24,7 +24,7 @@ times for repetitive dives. A selection of tables are available. The module
 assumes that the diver is using air as their breathing gas.
 
 %prep
-%setup -n %{module}-%{version}
+%setup -n %{upstream_name}-%{upstream_version}
 # fix perms
 chmod 644 README Changes lib/SCUBA/Table/NoDeco.pm
 # fix encoding
@@ -49,4 +49,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/SCUBA
 %{_mandir}/*/*
-
